@@ -16,7 +16,7 @@ export default function BlogList() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/blogs?status=active");
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/blogs?status=active");
       const data = await res.json();
       setPosts(Array.isArray(data) ? data : data.blogs || []);
     } catch (err) {

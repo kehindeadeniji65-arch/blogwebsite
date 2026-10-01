@@ -33,7 +33,7 @@ export default function AdminDashboard() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/users", {
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -46,7 +46,7 @@ export default function AdminDashboard() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/blogs", {
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/blogs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
 
   const handleDeleteUser = async (id: string) => {
     if (!confirm('Delete this user? This cannot be undone.')) return;
-    const res = await fetch(`http://localhost:4000/api/delete/${id}`, {
+    const res = await fetch(`https://blog-backend-0ieo.onrender.com/api/delete/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -68,7 +68,7 @@ export default function AdminDashboard() {
 
   const handleDeletePost = async (id: string) => {
     if (!confirm('Delete this post?')) return;
-    const res = await fetch(`http://localhost:4000/api/blogs/${id}`, {
+    const res = await fetch(`https://blog-backend-0ieo.onrender.com/api/blogs/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -76,7 +76,7 @@ export default function AdminDashboard() {
   };
 
   const handleStatusChange = async (id: string, status: string) => {
-    const res = await fetch(`http://localhost:4000/api/blogs/${id}`, {
+    const res = await fetch(`https://blog-backend-0ieo.onrender.com/api/blogs/${id}`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
       body: JSON.stringify({ status }),

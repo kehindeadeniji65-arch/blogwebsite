@@ -37,7 +37,7 @@ export default function Dashboard() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("http://localhost:4000/api/blogs?mine=true", {
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/blogs?mine=true", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -66,8 +66,8 @@ export default function Dashboard() {
     if (imageFile) formData.append("image", imageFile);
 
     const url = editingId
-      ? `http://localhost:4000/api/blogs/${editingId}`
-      : "http://localhost:4000/api/blogs";
+      ? `https://blog-backend-0ieo.onrender.com/api/blogs/${editingId}`
+      : "https://blog-backend-0ieo.onrender.com/api/blogs";
 
     const res = await fetch(url, {
       method: editingId ? "PATCH" : "POST",
@@ -94,7 +94,7 @@ export default function Dashboard() {
 
   const handleDelete = async (id: string) => {
     if (!confirm("Delete this post?")) return;
-    const res = await fetch(`http://localhost:4000/api/blogs/${id}`, {
+    const res = await fetch(`https://blog-backend-0ieo.onrender.com/api/blogs/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -102,7 +102,7 @@ export default function Dashboard() {
   };
 
   const handleStatusChange = async (id: string, status: string) => {
-    const res = await fetch(`http://localhost:4000/api/blogs/${id}`, {
+    const res = await fetch(`https://blog-backend-0ieo.onrender.com/api/blogs/${id}`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,

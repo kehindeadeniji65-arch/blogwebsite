@@ -21,7 +21,7 @@ const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:4000/api/register", {
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),

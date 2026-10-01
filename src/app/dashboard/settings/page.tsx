@@ -35,7 +35,7 @@ export default function Settings() {
     setError('');
 
     try {
-      const res = await fetch("http://localhost:4000/api/profile", {
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/profile", {
         method: 'PATCH',
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -66,7 +66,7 @@ export default function Settings() {
     if (!confirm("Are you sure you want to delete your account? This cannot be undone.")) return;
 
     try {
-      const res = await fetch("http://localhost:4000/api/profile", {
+      const res = await fetch("https://blog-backend-0ieo.onrender.com/api/profile", {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

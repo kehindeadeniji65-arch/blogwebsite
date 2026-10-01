@@ -16,7 +16,7 @@ export default function BlogDetail() {
 
   const fetchPost = async () => {
     try {
-      const res = await fetch(`http://localhost:4000/api/blogs/${params.id}`);
+      const res = await fetch(`https://blog-backend-0ieo.onrender.com/api/blogs/${params.id}`);
       const data = await res.json();
       setPost(data.blog || null);
     } catch (err) {
