@@ -1,0 +1,4 @@
+JWT
+random key gen
+uui
+SMTP
