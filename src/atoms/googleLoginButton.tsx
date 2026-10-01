@@ -14,7 +14,7 @@ export default function GoogleLoginButton({ mode }: { mode: 'login' | 'signup' }
     script.onload = () => {
       // @ts-ignore
       window.google.accounts.id.initialize({
-        client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+        client_id: "897473764449-qv7dnsoe6rohh2mv9trgbcanfls8d5th.apps.googleusercontent.com",
         callback: handleGoogleResponse,
       });
       // @ts-ignore
