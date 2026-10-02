@@ -41,7 +41,7 @@ export default function Navbar() {
 
   return (
 
-<div className="flex bg-white shadow-lg justify-between items-center px-4 md:px-15 py-1.5 sticky top-0">
+<div className="flex bg-white shadow-lg justify-between items-center px-4 md:px-15 py-2.5 sticky top-0">
   <Logo/>
 
   <ul className="hidden md:flex justify-between items-center w-[40%]">
