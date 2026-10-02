@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import Logo from "@/organism/Logo";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -41,7 +41,7 @@ export default function Navbar() {
 
   return (
 
-<div className="flex bg-white shadow-lg justify-between items-center px-4 md:px-15 py-4.5 sticky top-0">
+<div className="flex bg-white shadow-lg justify-between items-center px-4 md:px-15 py-1.5 sticky top-0">
   <Logo/>
 
   <ul className="hidden md:flex justify-between items-center w-[40%]">
@@ -76,7 +76,7 @@ export default function Navbar() {
   </div>
 
   <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-    <i className="fa-solid fa-bars text-2xl"></i>
+    <i className="fa-solid fa-bars text-sm"></i>
   </button>
 
   {menuOpen && (
