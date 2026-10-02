@@ -142,7 +142,7 @@ export default function Dashboard() {
               Dashboard
             </h1>
             {userName && (
-              <p className="text-sm text-white mt-1">
+              <p className="text-sm text-black mt-1">
                 Welcome back, {userName}
               </p>
             )}

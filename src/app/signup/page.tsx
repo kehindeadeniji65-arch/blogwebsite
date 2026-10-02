@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
-import GoogleLoginButton from "@/atoms/googleLoginButton";
 import Logo from "@/organism/Logo";
 
 export default function page() {
@@ -106,7 +105,6 @@ setTimeout(() => {
               Register
             </button>
           </form>
-          <GoogleLoginButton mode="signup"/>
           <div className="mt-5 flex flex-wrap justify-center gap-1 px-4 sm:px-10 text-sm sm:text-base">
             <p>Already have an account?</p>
             <Link href="/login" className="underline hover:text-white">
