@@ -3,6 +3,7 @@ import Navbar from "../layouts/navbar";
 import AllSection from "@/layouts/allSection";
 import Image from "next/image";
 import Footer from "@/layouts/Footer";
+import BottomNav from "@/layouts/BottomNav";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Main/>
       <AllSection />
       <Footer/>
+      <BottomNav/>
     </div>
   );
 }

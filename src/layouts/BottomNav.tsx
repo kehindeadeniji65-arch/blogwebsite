@@ -1,4 +1,3 @@
-// layouts/bottomNav.tsx
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,7 +9,7 @@ export default function BottomNav() {
     { name: "Home", link: "/", icon: "fa-solid fa-house" },
     { name: "Overview", link: "/dashboard", icon: "fa-solid fa-chart-pie" },
     { name: "Posts", link: "/dashboard/posts", icon: "fa-solid fa-file-alt" },
-    { name: "Settings", link: "/dashboard/settings", icon: "fa-solid fa-cog" },
+    { name: "Me", link: "/dashboard/settings", icon: "fa-solid fa-user" },
   ];
 
   return (
