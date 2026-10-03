@@ -316,7 +316,7 @@ export default function Dashboard() {
                 />
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-bold text-gray-800 truncate">{post.title}</h3>
+                    <h3 className="font-bold text-gray-200 truncate">{post.title}</h3>
                     {isAdmin ? (
                       <select
                         value={post.status || "pending"}

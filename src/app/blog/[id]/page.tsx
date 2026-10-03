@@ -32,8 +32,8 @@ export default function BlogDetail() {
   return (
     <div>
       <Navbar/>
-      <div className="max-w-3xl mx-auto px-4 py-10">
-        <button onClick={() => router.back()} className="mb-6 text-purple-800 font-semibold hover:underline">
+      <div className="bg-slate-700 max-w-3xl mx-auto px-4 py-10">
+        <button onClick={() => router.back()} className="mb-6 text-cyan-500 font-semibold hover:underline">
           ← Back
         </button>
 
