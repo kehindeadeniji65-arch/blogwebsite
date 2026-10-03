@@ -36,14 +36,14 @@ export default function BlogList() {
     <div>
       <Navbar/>
 
-      <div className="max-w-6xl mx-auto px-4 py-10">
+      <div className="max-w-6xl mx-auto px-4 py-10 bg-slate-900">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">All Posts</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-cyan-500">All Posts</h1>
           <input
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Search by title or author"
-            className="border border-black rounded-lg outline-none focus:border-purple-400 px-4 py-2 text-sm w-full sm:w-72"
+            className="border border-cyan-200 rounded-lg outline-none focus:border-cyan-400 px-4 py-2 text-sm w-full sm:w-72"
           />
         </div>
 
@@ -57,7 +57,7 @@ export default function BlogList() {
               <Link
                 href={`/blog/${post._id}`}
                 key={post._id}
-                className="flex flex-row sm:flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="flex flex-row sm:flex-col bg-slate-900/60 border border-cyan-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 {post.image && (
                   <img
@@ -67,14 +67,14 @@ export default function BlogList() {
                   />
                 )}
                 <div className="p-3 sm:p-4 flex-1 border-l-4 sm:border-l-0 sm:border-t-4 border-black">
-                  <h3 className="font-bold text-base sm:text-lg mb-1 text-gray-800">{post.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2">
-                    by <span className="text-orange-700 font-medium">{post.author}</span> ·{' '}
+                  <h3 className="font-bold text-base sm:text-lg mb-1 text-white">{post.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">
+                    by <span className="text-cyan-500 font-medium">{post.author}</span> ·{' '}
                     {post.createdAt && new Date(post.createdAt).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'short', day: 'numeric'
                     })}
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{post.content}</p>
+                  <p className="text-xs sm:text-sm text-white line-clamp-2">{post.content}</p>
                 </div>
               </Link>
             ))}

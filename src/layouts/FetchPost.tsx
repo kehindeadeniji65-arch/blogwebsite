@@ -57,7 +57,7 @@ export default function FetchPost() {
               <Link
                 href={`/blog/${post._id}`}
                 key={post._id}
-                className="flex flex-row sm:flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="flex flex-row sm:flex-col bg-slate-900/60 border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 {post.image && (
                   <img
@@ -66,15 +66,15 @@ export default function FetchPost() {
                     className="w-28 h-24 sm:w-full sm:h-48 object-cover shrink-0"
                   />
                 )}
-                <div className="p-3 sm:p-4 flex-1 border-l-4 sm:border-l-0 sm:border-t-4 border-black">
-                  <h3 className="font-bold text-base sm:text-lg mb-1 text-gray-800">{post.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 mb-1 sm:mb-2">
-                    by <span className="text-orange-700 font-medium">{post.author}</span> ·{' '}
+                <div className="p-3 sm:p-4 flex-1 border-l-4 sm:border-l-0 sm:border-t-4 border-cyan-500">
+                  <h3 className="font-bold text-base sm:text-lg mb-1 text-white">{post.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">
+                    by <span className="text-cyan-700 font-medium">{post.author}</span> ·{' '}
                     {post.createdAt && new Date(post.createdAt).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'short', day: 'numeric'
                     })}
                   </p>
-                  <p className="text-xs sm:text-sm text-gray-600 line-clamp-2">{post.content}</p>
+                  <p className="text-xs sm:text-sm text-white line-clamp-2">{post.content}</p>
                 </div>
               </Link>
             ))}

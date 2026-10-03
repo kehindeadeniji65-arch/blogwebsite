@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
-import Logo from "@/organism/Logo";
+import LogoW from "@/organism/LogoW";
 
 export default function page() {
   const router = useRouter();
@@ -56,18 +56,18 @@ export default function page() {
       )}
 
       {/* Left - Login form */}
-      <div className="flex justify-center items-center w-full lg:w-1/2 px-4 py-10 bg-linear-to-br from-cyan-700 via-cyan-500 to-cyan-300 lg:bg-white">
-        <div className="w-full max-w-md bg-white lg:shadow-none shadow-xl rounded-2xl px-6 py-8 sm:px-10 sm:py-10">
+      <div className="flex justify-center items-center w-full lg:w-1/2 px-4 py-10 bg-linear-to-br from-slate-800 via-slate-900 to-slate-900 lg:bg-linear-to-br from-slate-800 via-slate-900 to-slate-900">
+        <div className="w-full max-w-md bg- lg:shadow-none shadow-xl rounded-2xl px-6 py-8 sm:px-10 sm:py-10">
           <div className="flex lg:hidden justify-center mb-6">
-            <Logo/>
+            <LogoW/>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800">Welcome back</h2>
-          <p className="text-gray-500 text-sm mt-1 mb-7">Log in to continue to your dashboard.</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-cyan-500">Welcome back</h2>
+          <p className="text-gray-300 text-sm mt-1 mb-7">Log in to continue to your dashboard.</p>
 
           <form onSubmit={handleLogin} autoComplete="off" className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="email" className="text-sm font-medium text-gray-700">Email</label>
+              <label htmlFor="email" className="text-sm font-medium text-gray-300">Email</label>
               <div className="relative">
                 <i className="fa-solid fa-envelope absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
                 <input
@@ -78,14 +78,14 @@ export default function page() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   required
-                  className="w-full border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm outline-none focus:border-cyan-600 focus:ring-2 focus:ring-cyan-100 transition"
+                  className="w-full text-gray-400 border border-gray-200 rounded-xl pl-10 pr-4 py-2.5 text-sm outline-0 focus:border-cyan-600 focus:ring-2 focus:ring-cyan-100 transition"
                 />
               </div>
             </div>
 
             <div className="flex flex-col gap-1.5">
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="text-sm font-medium text-gray-700">Password</label>
+                <label htmlFor="password" className="text-sm font-medium text-gray-300">Password</label>
                 <Link href="/forgot-password" className="text-xs text-cyan-700 hover:underline">
                   Forgot password?
                 </Link>
@@ -100,7 +100,7 @@ export default function page() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
-                  className="w-full border border-gray-200 rounded-xl pl-10 pr-10 py-2.5 text-sm outline-none focus:border-cyan-600 focus:ring-2 focus:ring-cyan-100 transition"
+                  className="w-full text-gray-400 border border-gray-200 rounded-xl pl-10 pr-10 py-2.5 text-sm outline-none focus:border-cyan-600 focus:ring-2 focus:ring-cyan-100 transition"
                 />
                 <button
                   type="button"
@@ -143,10 +143,10 @@ export default function page() {
       </div>
 
       {/* Right - Logo & brand panel, desktop only */}
-      <div className="hidden lg:flex w-1/2 flex-col justify-center items-center bg-linear-to-br from-cyan-600 via-cyan-500 to-cyan-300 px-10 text-center relative overflow-hidden">
+      <div className="hidden lg:flex w-1/2 flex-col justify-center items-center bg-linear-to-br from-slate-800 via-slate-900 to-slate-900 px-10 text-center relative overflow-hidden">
         <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10"></div>
         <div className="absolute bottom-10 -left-10 w-32 h-32 rounded-full bg-white/10"></div>
-        <Logo/>
+        <LogoW/>
         <p className="mt-6 text-2xl font-bold text-white max-w-md">
           Blogs on product management & user feedback
         </p>

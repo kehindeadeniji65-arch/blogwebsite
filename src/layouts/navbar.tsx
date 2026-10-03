@@ -71,10 +71,10 @@ export default function Navbar() {
       <div className="flex md:hidden items-center gap-2">
         {user ? (
           <Link href="/dashboard" className="flex items-center gap-2">
+            <span className="text-sm font-semibold text-white">{firstName}</span>
             <div className="w-8 h-8 rounded-full bg-cyan-700 text-white flex items-center justify-center font-bold uppercase text-sm">
               {(user.name || user.email || "U").charAt(0)}
             </div>
-            <span className="text-sm font-semibold text-gray-800">{firstName}</span>
           </Link>
         ) : (
           <Link href="/signup" className="text-sm font-semibold text-cyan-500">
