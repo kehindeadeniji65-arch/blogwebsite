@@ -30,9 +30,9 @@ export default function BlogDetail() {
   if (!post) return <p className="text-center py-20 text-gray-500">Post not found.</p>;
 
   return (
-    <div>
+    <div className='bg-slate-900'>
       <Navbar/>
-      <div className="bg-slate-700 max-w-3xl mx-auto px-4 py-10">
+      <div className=" max-w-3xl mx-auto px-4 py-10">
         <button onClick={() => router.back()} className="mb-6 text-cyan-500 font-semibold hover:underline">
           ← Back
         </button>
@@ -41,13 +41,13 @@ export default function BlogDetail() {
           <img src={post.image} alt={post.title} className="w-full h-80 object-cover rounded-lg mb-6" />
         )}
 
-        <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-        <p className="text-sm text-gray-500 mb-6">
+        <h1 className="text-3xl font-bold mb-2 text-white">{post.title}</h1>
+        <p className="text-sm text-gray-300 mb-6">
           By {post.author} · {post.createdAt && new Date(post.createdAt).toLocaleDateString('en-US', {
             year: 'numeric', month: 'long', day: 'numeric'
           })}
         </p>
-        <p className="text-gray-700 leading-relaxed whitespace-pre-line">{post.content}</p>
+        <p className="text-white leading-relaxed whitespace-pre-line">{post.content}</p>
       </div>
     </div>
   );

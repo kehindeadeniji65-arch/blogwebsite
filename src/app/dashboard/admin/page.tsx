@@ -90,8 +90,8 @@ export default function AdminDashboard() {
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
       <LeftNavbar/>
 
-      <main className="flex-1 bg-slate-700 overflow-x-auto p-4 pb-24 sm:p-6">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Admin Panel</h1>
+      <main className="flex-1 bg-slate-900 overflow-x-auto p-4 pb-24 sm:p-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-6">Admin Panel</h1>
 
         {/* Stat cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -129,7 +129,7 @@ export default function AdminDashboard() {
 
         {tab === 'users' && (
           <div className="bg-slate-600/60 rounded-xl shadow-sm p-5">
-            <h2 className="text-lg font-bold text-gray-800 mb-4">All Users</h2>
+            <h2 className="text-lg font-bold text-cyan-400 mb-4">All Users</h2>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-sm min-w-[500px]">
                 <thead>
@@ -142,11 +142,11 @@ export default function AdminDashboard() {
                 </thead>
                 <tbody>
                   {users.map((u: any) => (
-                    <tr key={u._id} className="border-b border-gray-100 hover:bg-gray-50">
-                      <td className="p-2 font-medium text-gray-800">{u.name}</td>
+                    <tr key={u._id} className="border-b border-cyan-200 hover:bg-cyan-200">
+                      <td className="p-2 font-medium text-white">{u.name}</td>
                       <td className="p-2 text-white">{u.email}</td>
                       <td className="p-2">
-                        <span className={`rounded-sm px-2 py-1 text-xs font-semibold ${u.role === 'admin' ? 'bg-purple-100 text-purple-700 px-3 py-2' : 'bg-gray-100 text-gray-600 px-3 py-2'}`}>
+                        <span className={`rounded-sm px-2 py-1 text-xs font-semibold ${u.role === 'admin' ? 'bg-cyan-100 text-cyan-700 px-3 py-2' : 'bg-gray-100 text-gray-600 px-3 py-2'}`}>
                           {u.role}
                         </span>
                       </td>
@@ -185,7 +185,7 @@ export default function AdminDashboard() {
                 </thead>
                 <tbody>
                   {posts.map((post: any) => (
-                    <tr key={post._id} className="border-b border-gray-100 hover:bg-gray-50">
+                    <tr key={post._id} className="border-b border-cyan-200 hover:bg-cyan-50">
                       <td className="p-2"><img src={post.image} width={50} className="rounded-md object-cover h-10 w-10" /></td>
                       <td className="p-2 font-medium text-gray-200">{post.title}</td>
                       <td className="p-2 text-gray-200">{post.author}</td>
