@@ -81,13 +81,13 @@ export default function Settings() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
+    <div className="flex flex-col md:flex-row min-h-screen bg-slate-800">
       <DashboardSidebar />
 
       <main className="flex-1 p-4 sm:p-6 pb-24 md:pb-6 max-w-2xl">
-        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Settings</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold text-cyan-400 mb-6">Settings</h1>
 
-        <div className="bg-white rounded-xl shadow-sm p-5 mb-6">
+        <div className="bg-slate-600/60 rounded-xl shadow-sm p-5 mb-6">
           <p className="text-sm text-gray-500 mb-1">Role</p>
           <span className={`inline-block rounded-full px-3 py-1 text-xs font-semibold ${
             role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-600'
@@ -96,11 +96,11 @@ export default function Settings() {
           </span>
         </div>
 
-        <form onSubmit={handleUpdate} className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3">
-          <h2 className="text-lg font-bold text-gray-800 mb-1">Profile</h2>
+        <form onSubmit={handleUpdate} className="bg-slate-600/60 rounded-xl shadow-sm p-5 flex flex-col gap-3">
+          <h2 className="text-lg font-bold text-cyan-400 mb-1">Profile</h2>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm text-gray-600">Name</label>
+            <label className="text-sm text-gray-300">Name</label>
             <input
               value={name}
               onChange={e => setName(e.target.value)}
@@ -109,7 +109,7 @@ export default function Settings() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm text-gray-600">Email</label>
+            <label className="text-sm text-gray-300">Email</label>
             <input
               type="email"
               value={email}
@@ -120,11 +120,11 @@ export default function Settings() {
 
           <hr className="my-2" />
 
-          <h2 className="text-lg font-bold text-gray-800 mb-1">Change Password</h2>
+          <h2 className="text-lg font-bold text-cyan-400 mb-1">Change Password</h2>
           <p className="text-xs text-gray-400 -mt-2 mb-1">Leave blank if you don't want to change it.</p>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm text-gray-600">Current Password</label>
+            <label className="text-sm text-gray-300">Current Password</label>
             <input
               type="password"
               value={currentPassword}
@@ -134,7 +134,7 @@ export default function Settings() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-sm text-gray-600">New Password</label>
+            <label className="text-sm text-gray-300">New Password</label>
             <input
               type="password"
               value={newPassword}
@@ -146,14 +146,14 @@ export default function Settings() {
           {message && <p className="text-green-600 text-sm">{message}</p>}
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          <button type="submit" className="bg-purple-700 hover:bg-purple-800 text-white p-2 rounded-lg font-semibold mt-2">
+          <button type="submit" className="bg-cyan-500 hover:bg-purple-800 text-white p-2 rounded-lg font-semibold mt-2">
             Save Changes
           </button>
         </form>
 
         <div className="bg-white rounded-xl shadow-sm p-5 mt-6 border border-red-100">
           <h2 className="text-lg font-bold text-red-600 mb-1">Danger Zone</h2>
-          <p className="text-sm text-gray-500 mb-3">Deleting your account is permanent and cannot be undone.</p>
+          <p className="text-sm text-gray-300 mb-3">Deleting your account is permanent and cannot be undone.</p>
           <button
             onClick={handleDeleteAccount}
             className="border border-red-500 text-red-500 hover:bg-red-50 px-4 py-2 rounded-lg text-sm font-semibold"

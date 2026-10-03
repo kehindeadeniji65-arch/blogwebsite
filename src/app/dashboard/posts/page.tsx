@@ -4,7 +4,7 @@ import FetchPost from '@/layouts/FetchPost'
 
 export default function page() {
   return (
-    <div>
+    <div className='bg-slate-800'>
       <FetchPost/>
     </div>
   )
