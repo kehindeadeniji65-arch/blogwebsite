@@ -143,15 +143,15 @@ export default function Dashboard() {
 <div className="flex flex-col md:flex-row min-h-screen bg-linear-to-r from-cyan-70 via-cyan-350 to-cyan-30">
       <DashboardSidebar />
 
-      <main className="flex-1 overflow-x-auto p-4 sm:p-6 pb-24 md:pb-6">
+      <main className="flex-1 overflow-x-auto p-4 bg-slate-800 sm:p-6 pb-24 md:pb-6">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+            <h1 className="text-2xl sm:text-3xl font-bold text-cyan-500">
               Dashboard
             </h1>
             {userName && (
-              <p className="text-sm text-black mt-1">
+              <p className="text-sm text-cyan-650 mt-1">
                 Welcome back, {userName}
               </p>
             )}
@@ -161,7 +161,7 @@ export default function Dashboard() {
               setShowForm(!showForm);
               if (editingId) resetForm();
             }}
-            className="bg-orange-500 hover:bg-orange-600 md:bg-purple-700 md:hover:bg-purple-800 text-white px-4 py-2.5 rounded-lg font-semibold w-full sm:w-auto"
+            className="bg-cyan-500 hover:bg-cyan-300 md:bg-cyan-500 md:hover:bg-cyan-800 text-white px-4 py-2.5 rounded-lg font-semibold w-full sm:w-auto"
           >
             {showForm ? "Close" : "+ New Post"}
           </button>
@@ -169,8 +169,8 @@ export default function Dashboard() {
 
         {/* Stat cards */}
         <div className="grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
-          <div className="bg-white rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600">
+          <div className="bg-slate-800/40 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-600 flex items-center justify-center text-cyan-500">
               <i className="fa-solid fa-file-alt"></i>
             </div>
             <div>
@@ -178,8 +178,8 @@ export default function Dashboard() {
               <p className="text-lg sm:text-xl font-bold text-gray-800">{totalPosts}</p>
             </div>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+          <div className="bg-slate-800/40 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-600 flex items-center justify-center text-cyan-500">
               <i className="fa-solid fa-arrow-trend-up"></i>
             </div>
             <div>
@@ -187,8 +187,8 @@ export default function Dashboard() {
               <p className="text-lg sm:text-xl font-bold text-gray-800">{activeCount}</p>
             </div>
           </div>
-          <div className="bg-white rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
+          <div className="bg-slate-800/40 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-600 flex items-center justify-center text-cyan-500">
               <i className="fa-solid fa-clock"></i>
             </div>
             <div>
@@ -202,7 +202,7 @@ export default function Dashboard() {
         {showForm && (
           <form
             onSubmit={handlePost}
-            className="bg-white rounded-xl shadow-sm p-5 flex flex-col gap-3 mb-6"
+            className="bg-slate-400 rounded-xl shadow-sm p-5 flex flex-col gap-3 mb-6"
             autoComplete="off"
           >
             <h2 className="text-lg font-bold text-gray-800 mb-1">

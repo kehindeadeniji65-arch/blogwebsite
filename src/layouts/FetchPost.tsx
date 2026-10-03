@@ -69,7 +69,7 @@ export default function FetchPost() {
                 <div className="p-3 sm:p-4 flex-1 border-l-4 sm:border-l-0 sm:border-t-4 border-cyan-500">
                   <h3 className="font-bold text-base sm:text-lg mb-1 text-white">{post.title}</h3>
                   <p className="text-xs sm:text-sm text-gray-300 mb-1 sm:mb-2">
-                    by <span className="text-cyan-5d00 font-medium">{post.author}</span> ·{' '}
+                    by <span className="text-cyan-500 font-medium">{post.author}</span> ·{' '}
                     {post.createdAt && new Date(post.createdAt).toLocaleDateString('en-US', {
                       year: 'numeric', month: 'short', day: 'numeric'
                     })}

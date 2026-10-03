@@ -1,5 +1,6 @@
 // layouts/dashboardSidebar.tsx
 "use client";
+import LogoW from "@/organism/LogoW";
 import Logo from "@/organism/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -38,10 +39,10 @@ export default function DashboardSidebar() {
   return (
     <>
       {/* Mobile top bar */}
-      <div className="flex md:hidden items-center justify-between bg-white shadow-lg px-4 py-4 sticky top-0 z-40">
-        <Logo/>
+      <div className="flex md:hidden items-center justify-between bg-slate-800 shadow-lg px-4 py-4 sticky top-0 z-40">
+        <LogoW/>
         <button onClick={() => setMenuOpen(true)}>
-          <i className="fa-solid fa-bars text-2xl"></i>
+          <i className="fa-solid fa-bars text-2xl text-gray-300"></i>
         </button>
       </div>
 
@@ -53,12 +54,12 @@ export default function DashboardSidebar() {
       )}
 
       <aside
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 px-4 py-6 flex flex-col transform transition-transform duration-300 md:hidden ${
+        className={`fixed top-0 right-0 h-full w-64 bg-slate-800 shadow-lg z-50 px-4 py-6 flex flex-col transform transition-transform duration-300 md:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between mb-8">
-          <Logo/>
+          <LogoW/>
           <button onClick={() => setMenuOpen(false)}>
             <i className="fa-solid fa-xmark text-2xl"></i>
           </button>
@@ -91,14 +92,14 @@ export default function DashboardSidebar() {
       </aside>
 
       {/* Desktop left sidebar */}
-      <aside className="hidden md:flex md:flex-col w-56 shrink-0 min-h-screen bg-white shadow-lg px-4 py-6 sticky top-0">
-        <Logo/>
+      <aside className="hidden md:flex md:flex-col w-56 shrink-0 min-h-screen bg-slate-800 shadow-lg px-4 py-6 sticky top-0">
+        <LogoW/>
         <ul className="flex flex-col gap-1 mt-8">
           {navItems.map((navs, i) => (
             <li key={i}>
               <Link
                 href={navs.link}
-                className={`block px-4 py-2 rounded-[25px] hover:text-cyan-700 ${pathname === navs.link ? "text-cyan-700" : ""}`}
+                className={`block px-4 py-2 rounded-[25px] hover:text-cyan-700 ${pathname === navs.link ? "text-cyan-700" : "text-gray-400"}`}
               >
                 <i className={`${navs.icon} mr-2`}></i>
                 {navs.name}

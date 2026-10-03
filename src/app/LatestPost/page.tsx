@@ -33,7 +33,7 @@ export default function BlogList() {
   );
 
   return (
-    <div>
+    <div className='bg-slate-800'>
       <Navbar/>
 
       <div className="max-w-6xl mx-auto px-4 py-10 bg-slate-900">
