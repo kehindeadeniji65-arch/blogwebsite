@@ -104,7 +104,7 @@ export default function Settings() {
             <input
               value={name}
               onChange={e => setName(e.target.value)}
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
+              className="border text-white border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
             />
           </div>
 
@@ -114,7 +114,7 @@ export default function Settings() {
               type="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
+              className="border text-white border-gray-200 rounded-lg outline-none focus:border-cyan-400 p-2 text-sm"
             />
           </div>
 
@@ -151,7 +151,7 @@ export default function Settings() {
           </button>
         </form>
 
-        <div className="bg-white rounded-xl shadow-sm p-5 mt-6 border border-red-100">
+        <div className="bg-slate-600/60 rounded-xl shadow-sm p-5 mt-6 border border-red-100">
           <h2 className="text-lg font-bold text-red-600 mb-1">Danger Zone</h2>
           <p className="text-sm text-gray-300 mb-3">Deleting your account is permanent and cannot be undone.</p>
           <button
