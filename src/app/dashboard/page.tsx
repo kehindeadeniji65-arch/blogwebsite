@@ -308,7 +308,7 @@ export default function Dashboard() {
         {/* Mobile: card list */}
         <div className="flex flex-col gap-3 sm:hidden">
           {filteredPosts.map((post: any) => (
-            <div key={post._id} className="bg-slate-500 rounded-xl shadow-sm p-3">
+            <div key={post._id} className="bg-slate-600/60 rounded-xl shadow-sm p-3">
               <div className="flex gap-3 items-start">
                 <img
                   src={post.image}
@@ -374,7 +374,7 @@ export default function Dashboard() {
         </div>
 
         {/* Desktop: table, unchanged */}
-        <div className="hidden sm:block bg-slate-500 rounded-xl shadow-sm p-5">
+        <div className="hidden sm:block bg-slate-600/60 rounded-xl shadow-sm p-5">
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm min-w-[640px]">
               <thead>
@@ -391,7 +391,7 @@ export default function Dashboard() {
                 {filteredPosts.map((post: any) => (
                   <tr
                     key={post._id}
-                    className="border-b border-gray-100 align-middle hover:bg-gray-50"
+                    className="border-b border-gray-100 align-middle"
                   >
                     <td className="p-2">
                       <img
