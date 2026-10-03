@@ -45,7 +45,7 @@ export default function FetchPost() {
 
       {/* Latest Posts */}
       <div id="latest-posts" className="max-w-6xl mx-auto px-4 py-10">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-5">Latest Posts</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-cyan-500 mb-5">Latest Posts</h2>
 
         {loading ? (
           <p className="text-center text-gray-500">Loading posts...</p>
@@ -84,14 +84,14 @@ export default function FetchPost() {
 
       {/* Explore by category */}
       <div className="max-w-6xl mx-auto px-4 pb-10">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">Explore by Category</h2>
+        <h2 className="text-xl sm:text-2xl font-bold text-cyan-500 mb-4">Explore by Category</h2>
         <div className="flex flex-wrap gap-3">
           {categories.map((cat, i) => (
             <button
               key={i}
-              className="flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:border-orange-400 hover:text-orange-700"
+              className="flex items-center gap-2 bg-cyan- border border-cyan-200 px-4 py-2 rounded-full text-sm font-medium text-white hover:border-orange-400 hover:text-orange-700"
             >
-              <i className={`${cat.icon} text-orange-600`}></i>
+              <i className={`${cat.icon} text-cyan-600`}></i>
               {cat.name}
             </button>
           ))}
@@ -100,29 +100,29 @@ export default function FetchPost() {
 
       {/* Why Creativiy Blog */}
       <div className="max-w-6xl mx-auto px-4 pb-10">
-        <div className="bg-purple-50 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6">
+        <div className="border border-cyan-400 rounded-2xl p-6 sm:p-10 flex flex-col sm:flex-row items-center gap-6">
           <div className="flex-1">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3">Why Creativiy BLOG?</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">Why Creativiy BLOG?</h2>
             <p className="text-gray-600 text-sm sm:text-base">
               We share thoughtful stories, fresh perspectives, and creative ideas that spark{' '}
-              <span className="text-orange-700 font-semibold">inspiration</span>, encourage{' '}
-              <span className="text-orange-700 font-semibold">growth</span>, and connect curious minds.
+              <span className="text-cyan-500 font-semibold">inspiration</span>, encourage{' '}
+              <span className="text-cyan-500 font-semibold">growth</span>, and connect curious minds.
             </p>
-          </div>
-          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-orange-200/60 flex items-center justify-center shrink-0">
-            <i className="fa-solid fa-seedling text-5xl text-orange-600"></i>
+          </div> 
+          <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-cyan-200/60 flex items-center justify-center shrink-0">
+            <i className="fa-solid fa-seedling text-5xl text-cyan-900"></i>
           </div>
         </div>
       </div>
 
       {/* Newsletter */}
       <div className="max-w-6xl mx-auto px-4 pb-14">
-        <div className="border border-orange-200 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-5 bg-white">
-          <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
-            <i className="fa-solid fa-envelope text-orange-700"></i>
+        <div className="border border-cyan-400 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-5">
+          <div className="w-12 h-12 rounded-full bg-cyan-200/60 flex items-center justify-center shrink-0">
+            <i className="fa-solid fa-envelope text-cyan-900"></i>
           </div>
           <div className="flex-1 text-center sm:text-left">
-            <h3 className="font-bold text-lg text-gray-800">Stay Inspired</h3>
+            <h3 className="font-bold text-lg text-white">Stay Inspired</h3>
             <p className="text-sm text-gray-500">Get the best stories delivered to your inbox every week.</p>
           </div>
           <form
@@ -133,11 +133,11 @@ export default function FetchPost() {
               type="email"
               placeholder="Enter your email address"
               required
-              className="border border-gray-200 rounded-lg px-4 py-2 text-sm outline-none focus:border-orange-400 w-full sm:w-64"
+              className="border border-cyan-200 text-cyan-200 rounded-lg px-4 py-2 text-sm outline-none focus:border-orange-400 w-full sm:w-64"
             />
             <button
               type="submit"
-              className="bg-orange-500 hover:bg-orange-800 text-white font-semibold px-5 py-2 rounded-lg text-sm"
+              className="bg-cyan-500 hover:bg-orange-800 text-white font-semibold px-5 py-2 rounded-lg text-sm"
             >
               Subscribe
             </button>

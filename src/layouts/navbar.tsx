@@ -1,6 +1,6 @@
 // layouts/navbar.tsx
 "use client";
-import Logo from "@/organism/Logo";
+import LogoW from "@/organism/LogoW";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
@@ -36,12 +36,12 @@ export default function Navbar() {
   const firstName = (user?.name || user?.email || "").split(" ")[0];
 
   return (
-    <div className="flex bg-white shadow-lg justify-between items-center px-4 md:px-15 py-2.5 sticky top-0 z-30">
-      <Logo/>
+    <div className="flex bg-slate-900 shadow-lg justify-between items-center px-4 md:px-15 py-2.5 sticky top-0 z-30">
+      <LogoW/>
 
       <ul className="hidden md:flex justify-between items-center w-[40%]">
         {navItems.map((navs, i) => (
-          <li key={i} className={`hover:text-cyan-700 px-6 py-2 text-lg rounded-[25px] ${pathname == navs.link ? "text-cyan-700" : ""}`}>
+          <li key={i} className={`hover:text-cyan-700 px-6 py-2 text-lg rounded-[25px] ${pathname == navs.link ? "text-cyan-700" : "text-white"}`}>
             <Link href={navs.link}>{navs.name}</Link>
           </li>
         ))}
@@ -77,8 +77,8 @@ export default function Navbar() {
             <span className="text-sm font-semibold text-gray-800">{firstName}</span>
           </Link>
         ) : (
-          <Link href="/signup" className="text-sm font-semibold text-cyan-700">
-            Register
+          <Link href="/signup" className="text-sm font-semibold text-cyan-500">
+            Signup
           </Link>
         )}
       </div>

@@ -7,7 +7,7 @@ import BottomNav from "@/layouts/BottomNav";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-slate-900">
       <Navbar/>
       <Main/>
       <AllSection />
