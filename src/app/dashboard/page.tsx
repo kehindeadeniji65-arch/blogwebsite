@@ -19,21 +19,22 @@ export default function Dashboard() {
   const [searchName, setSearchName] = useState("");
   const [dateFilter, setDateFilter] = useState("");
   const [showForm, setShowForm] = useState(false);
+  const [posting, setPosting] = useState(false);
   const token =
     typeof window !== "undefined" ? localStorage.getItem("token") : null;
 
   useEffect(() => {
-  if (!token) return router.push('/login');
-  fetchPosts();
+    if (!token) return router.push('/login');
+    fetchPosts();
 
-  try {
-    const payload = JSON.parse(atob(token.split('.')[1]));
-    setUserName(payload.name || payload.email || '');
-    setIsAdmin(payload.role === 'admin');
-  } catch {
-    setUserName('');
-  }
-}, []);
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      setUserName(payload.name || payload.email || '');
+      setIsAdmin(payload.role === 'admin');
+    } catch {
+      setUserName('');
+    }
+  }, []);
 
   const fetchPosts = async () => {
     try {
@@ -58,6 +59,8 @@ export default function Dashboard() {
 
   const handlePost = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setPosting(true);
+
     const formData = new FormData();
     formData.append("title", title);
     formData.append("content", content);
@@ -69,16 +72,22 @@ export default function Dashboard() {
       ? `https://blog-backend-0ieo.onrender.com/api/blogs/${editingId}`
       : "https://blog-backend-0ieo.onrender.com/api/blogs";
 
-    const res = await fetch(url, {
-      method: editingId ? "PATCH" : "POST",
-      headers: { Authorization: `Bearer ${token}` },
-      body: formData,
-    });
+    try {
+      const res = await fetch(url, {
+        method: editingId ? "PATCH" : "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: formData,
+      });
 
-    if (res.ok) {
-      resetForm();
-      setShowForm(false);
-      fetchPosts();
+      if (res.ok) {
+        resetForm();
+        setShowForm(false);
+        fetchPosts();
+      }
+    } catch (err) {
+      console.error("Failed to save post", err);
+    } finally {
+      setPosting(false);
     }
   };
 
@@ -236,9 +245,17 @@ export default function Dashboard() {
             <div className="flex gap-2">
               <button
                 type="submit"
-                className="bg-purple-700 hover:bg-purple-800 text-white p-2 rounded-lg flex-1 font-semibold"
+                disabled={posting}
+                className="bg-purple-700 hover:bg-purple-800 disabled:opacity-60 disabled:cursor-not-allowed text-white p-2 rounded-lg flex-1 font-semibold flex items-center justify-center gap-2"
               >
-                {editingId ? "Update" : "Post"}
+                {posting ? (
+                  <>
+                    <i className="fa-solid fa-circle-notch fa-spin"></i>
+                    {editingId ? "Updating..." : "Posting..."}
+                  </>
+                ) : (
+                  editingId ? "Update" : "Post"
+                )}
               </button>
               {editingId && (
                 <button
@@ -247,7 +264,8 @@ export default function Dashboard() {
                     resetForm();
                     setShowForm(false);
                   }}
-                  className="border border-gray-300 p-2 rounded-lg"
+                  disabled={posting}
+                  className="border border-gray-300 p-2 rounded-lg disabled:opacity-60"
                 >
                   Cancel
                 </button>

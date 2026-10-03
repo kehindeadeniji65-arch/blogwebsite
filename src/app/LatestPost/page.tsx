@@ -43,7 +43,7 @@ export default function BlogList() {
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             placeholder="Search by title or author"
-            className="border border-cyan-200 rounded-lg outline-none focus:border-cyan-400 px-4 py-2 text-sm w-full sm:w-72"
+            className="border text-gray-400 border-cyan-200 rounded-lg outline-none focus:border-cyan-400 px-4 py-2 text-sm w-full sm:w-72"
           />
         </div>
 
