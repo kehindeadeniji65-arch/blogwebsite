@@ -151,7 +151,7 @@ export default function Dashboard() {
               Dashboard
             </h1>
             {userName && (
-              <p className="text-sm text-cyan-650 mt-1">
+              <p className="text-sm text-cyan-600 mt-1">
                 Welcome back, {userName}
               </p>
             )}
@@ -169,31 +169,31 @@ export default function Dashboard() {
 
         {/* Stat cards */}
         <div className="grid grid-cols-3 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
-          <div className="bg-slate-800/40 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+          <div className="bg-slate-600/60 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-600 flex items-center justify-center text-cyan-500">
               <i className="fa-solid fa-file-alt"></i>
             </div>
             <div>
-              <p className="text-xs sm:text-sm text-gray-500">Total Posts</p>
-              <p className="text-lg sm:text-xl font-bold text-gray-800">{totalPosts}</p>
+              <p className="text-xs sm:text-sm text-gray-300">Total Posts</p>
+              <p className="text-lg sm:text-xl font-bold text-gray-200">{totalPosts}</p>
             </div>
           </div>
-          <div className="bg-slate-800/40 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+          <div className="bg-slate-600/60 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-600 flex items-center justify-center text-cyan-500">
               <i className="fa-solid fa-arrow-trend-up"></i>
             </div>
             <div>
-              <p className="text-xs sm:text-sm text-gray-500">Active</p>
-              <p className="text-lg sm:text-xl font-bold text-gray-800">{activeCount}</p>
+              <p className="text-xs sm:text-sm text-gray-300">Active</p>
+              <p className="text-lg sm:text-xl font-bold text-gray-200">{activeCount}</p>
             </div>
           </div>
-          <div className="bg-slate-800/40 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
+          <div className="bg-slate-600/60 rounded-xl shadow-sm p-3 sm:p-5 flex flex-col sm:flex-row items-center sm:items-center gap-2 sm:gap-4 text-center sm:text-left">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-600 flex items-center justify-center text-cyan-500">
               <i className="fa-solid fa-clock"></i>
             </div>
             <div>
-              <p className="text-xs sm:text-sm text-gray-500">Pending</p>
-              <p className="text-lg sm:text-xl font-bold text-gray-800">{pendingCount}</p>
+              <p className="text-xs sm:text-sm text-gray-300">Pending</p>
+              <p className="text-lg sm:text-xl font-bold text-gray-200">{pendingCount}</p>
             </div>
           </div>
         </div>
@@ -202,10 +202,10 @@ export default function Dashboard() {
         {showForm && (
           <form
             onSubmit={handlePost}
-            className="bg-slate-400 rounded-xl shadow-sm p-5 flex flex-col gap-3 mb-6"
+            className="bg-slate-600 rounded-xl shadow-sm p-5 flex flex-col gap-3 mb-6"
             autoComplete="off"
           >
-            <h2 className="text-lg font-bold text-gray-800 mb-1">
+            <h2 className="text-lg font-bold text-gray-200 mb-1">
               {editingId ? "Edit Post" : "New Post"}
             </h2>
             <input
@@ -213,27 +213,27 @@ export default function Dashboard() {
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Title"
               required
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
+              className="border text-gray-300 border-gray-200 rounded-lg outline-none focus:border-cyan-400 p-2 text-sm"
             />
             <textarea
               value={content}
               onChange={(e) => setContent(e.target.value)}
               placeholder="Content"
               required
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
+              className="border text-gray-300 border-gray-200 rounded-lg outline-none focus:border-cyan-400 p-2 text-sm"
             />
             <input
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
               placeholder="Author"
               required
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
+              className="border text-gray-300 border-gray-200 rounded-lg outline-none focus:border-cyan-400 p-2 text-sm"
             />
             <input
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               placeholder="Category"
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 p-2 text-sm"
+              className="border text-gray-300 border-gray-200 rounded-lg outline-none focus:border-cyan-400 p-2 text-sm"
             />
             <input
               type="file"
@@ -246,7 +246,7 @@ export default function Dashboard() {
               <button
                 type="submit"
                 disabled={posting}
-                className="bg-purple-700 hover:bg-purple-800 disabled:opacity-60 disabled:cursor-not-allowed text-white p-2 rounded-lg flex-1 font-semibold flex items-center justify-center gap-2"
+                className="bg-cyan-700 hover:bg-cyan-800 disabled:opacity-60 disabled:cursor-not-allowed text-white p-2 rounded-lg flex-1 font-semibold flex items-center justify-center gap-2"
               >
                 {posting ? (
                   <>
@@ -282,13 +282,13 @@ export default function Dashboard() {
               value={searchName}
               onChange={(e) => setSearchName(e.target.value)}
               placeholder="Search posts..."
-              className="border border-gray-200 rounded-lg outline-none focus:border-purple-400 px-3 py-2 text-sm w-full sm:w-56"
+              className="border border-cyan-200 text-gray-300 rounded-lg outline-none focus:border-purple-400 px-3 py-2 text-sm w-full sm:w-56"
             />
             <input
               type="date"
               value={dateFilter}
               onChange={(e) => setDateFilter(e.target.value)}
-              className="hidden sm:block border border-gray-200 rounded-lg outline-none focus:border-purple-400 px-3 py-2 text-sm"
+              className="hidden sm:block text-gray-300 border border-gray-200 rounded-lg outline-none focus:border-purple-400 px-3 py-2 text-sm"
             />
             {(searchName || dateFilter) && (
               <button
@@ -308,7 +308,7 @@ export default function Dashboard() {
         {/* Mobile: card list */}
         <div className="flex flex-col gap-3 sm:hidden">
           {filteredPosts.map((post: any) => (
-            <div key={post._id} className="bg-white rounded-xl shadow-sm p-3">
+            <div key={post._id} className="bg-slate-500 rounded-xl shadow-sm p-3">
               <div className="flex gap-3 items-start">
                 <img
                   src={post.image}
@@ -343,7 +343,7 @@ export default function Dashboard() {
                       </span>
                     )}
                   </div>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-300">
                     {post.author} ·{" "}
                     {post.createdAt &&
                       new Date(post.createdAt).toLocaleDateString("en-US", {
@@ -355,13 +355,13 @@ export default function Dashboard() {
               <div className="flex gap-2 mt-3">
                 <button
                   onClick={() => handleEdit(post)}
-                  className="flex-1 flex items-center justify-center gap-1 border border-orange-400 text-orange-500 font-semibold text-sm py-2 rounded-lg"
+                  className="flex-1 flex items-center justify-center gap-1 border border-cyan-400 text-cyan-500 font-semibold text-sm py-2 rounded-lg"
                 >
                   <i className="fa-solid fa-pen"></i> Edit
                 </button>
                 <button
                   onClick={() => handleDelete(post._id)}
-                  className="flex-1 flex items-center justify-center gap-1 border border-red-400 text-red-500 font-semibold text-sm py-2 rounded-lg"
+                  className="flex-1 flex items-center justify-center gap-1 border border-cyan-400 text-cyan-500 font-semibold text-sm py-2 rounded-lg"
                 >
                   <i className="fa-solid fa-trash"></i> Delete
                 </button>
@@ -374,7 +374,7 @@ export default function Dashboard() {
         </div>
 
         {/* Desktop: table, unchanged */}
-        <div className="hidden sm:block bg-white rounded-xl shadow-sm p-5">
+        <div className="hidden sm:block bg-slate-500 rounded-xl shadow-sm p-5">
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm min-w-[640px]">
               <thead>
@@ -400,11 +400,11 @@ export default function Dashboard() {
                         className="rounded-md object-cover h-10 w-10"
                       />
                     </td>
-                    <td className="p-2 font-medium text-gray-800">
+                    <td className="p-2 font-medium text-cyan-400">
                       {post.title}
                     </td>
-                    <td className="p-2 text-gray-600">{post.author}</td>
-                    <td className="p-2 text-gray-600">
+                    <td className="p-2 text-gray-300">{post.author}</td>
+                    <td className="p-2 text-gray-500">
                       {post.createdAt &&
                         new Date(post.createdAt).toLocaleDateString("en-US", {
                           year: "numeric",

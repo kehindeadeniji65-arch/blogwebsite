@@ -71,7 +71,7 @@ export default function DashboardSidebar() {
                 href="/dashboard/admin"
                 onClick={() => setMenuOpen(false)}
                 className={`flex items-center px-4 py-2 rounded-[25px] hover:text-cyan-700 ${
-                  pathname === "/dashboard/admin" ? "text-cyan-700 bg-cyan-50" : ""
+                  pathname === "/dashboard/admin" ? "text-cyan-700 bg-cyan-50" : "text-cyan-400"
                 }`}
               >
                 <i className="fa-solid fa-shield-halved mr-2 w-5"></i>
@@ -99,7 +99,7 @@ export default function DashboardSidebar() {
             <li key={i}>
               <Link
                 href={navs.link}
-                className={`block px-4 py-2 rounded-[25px] hover:text-cyan-700 ${pathname === navs.link ? "text-cyan-700" : "text-gray-400"}`}
+                className={`block px-4 py-2 rounded-[25px] hover:text-cyan-700 ${pathname === navs.link ? "text-cyan-500" : "text-gray-300"}`}
               >
                 <i className={`${navs.icon} mr-2`}></i>
                 {navs.name}
